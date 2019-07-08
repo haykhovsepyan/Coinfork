@@ -12,8 +12,8 @@ class Static():
         self.args = self.parser.parse_args()
         self.size_count = 0
         self.total_count = 0
-        #self.magic_number = float(self.args.a)
-        self.magic_number = self.args.btc
+        #self.btc_size = float(self.args.a)
+        self.btc_size = self.args.btc
         self.size_count_sell = 0
         self.total_count_sell = 0
         self.percent_limit = self.args.perc

@@ -38,7 +38,7 @@ def coin_buy(data_js_buy, data_js_sell, settings,  buysell, match_item, wallets)
     wallets.w_buy_sell(match_item)
     buysell.comp_buy_sell(data_js_buy, data_js_sell)
     if wallets.w_buy_sell(match_item) and buysell.comp_buy_sell(data_js_buy, data_js_sell) is not False:
-        magic_number = settings.magic_number
+        btc_size = settings.btc_size
         size_count = settings.size_count
         total_count = settings.total_count
         for index, item in enumerate(buysell.data_to_loop):
@@ -50,14 +50,14 @@ def coin_buy(data_js_buy, data_js_sell, settings,  buysell, match_item, wallets)
             else:
                 total = price * size
 
-            while magic_number > total and count > 0:
-                magic_number -= total
+            while btc_size > total and count > 0:
+                btc_size -= total
                 size_count += size
                 total_count += total
                 count -= 1
-            if magic_number < total:
+            if btc_size < total:
                 global size_total
-                size_total = magic_number / price + size_count - wallets.fee
+                size_total = btc_size / price + size_count - wallets.fee
             else:
                 size_total = size_count - wallets.fee
     
@@ -98,7 +98,7 @@ def get_percent(settings, data_js_buy, data_js_sell, match_item, buysell, wallet
     sell = coin_sell(data_js_sell, settings, data_js_buy, match_item, buysell, wallets)
     if sell:
         fork_desc = "%s-%s" % (match_item, settings.desc)
-        perc_result = 100 - (100 * settings.magic_number) / sell
+        perc_result = 100 - (100 * settings.btc_size) / sell
         if perc_result > settings.percent_limit:
             result = str("%.2f" % perc_result) + '%', fork_desc, #'\n'
             return result
