@@ -50,3 +50,37 @@ class Static():
             self.path1 = 'coinlist/binanceorder'
             self.path2 = 'coinlist/hitorder'
             self.desc = '(Buy in Binance sell in  Hitbtc)'
+
+        if comp_path == 'bittrex-poloniex':
+            self.path1 = 'coinlist/bitorder'
+            self.path2 = 'coinlist/poloorder'
+            self.desc = '(Buy in Bittrex sell in  Poloniex)'
+
+
+        if comp_path == 'poloniex-bittrex':
+            self.path1 = 'coinlist/poloorder'
+            self.path2 = 'coinlist/bitorder'
+            self.desc = '(Buy in Poloniex sell in  Bittrex)'
+
+            
+        if comp_path == 'hitbtc-poloniex':
+            self.path1 = 'coinlist/hitorder'
+            self.path2 = 'coinlist/poloorder'
+            self.desc = '(Buy in Hitbtc sell in  Poloniex)'
+
+
+        if comp_path == 'poloniex-hitbtc':
+            self.path1 = 'coinlist/poloorder'
+            self.path2 = 'coinlist/hitorder'
+            self.desc = '(Buy in Poloniex sell in  Hitbtc)'
+
+        if comp_path == 'poloniex-binance':
+            self.path1 = 'coinlist/poloorder'
+            self.path2 = 'coinlist/binanceorder'
+            self.desc = '(Buy in Poloniex sell in  Binance)'
+
+
+        if comp_path == 'binance-poloniex':
+            self.path1 = 'coinlist/binanceorder'
+            self.path2 = 'coinlist/poloorder'
+            self.desc = '(Buy in Binance sell in  Poloniex)'

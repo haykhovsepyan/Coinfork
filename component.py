@@ -10,7 +10,7 @@ class Component():
                 self.size_key = 'Quantity'
                 self.total_key = None
 
-            elif  self.component_buy == 'binance':
+            elif  self.component_buy == 'binance' or self.component_buy == 'poloniex':
                 self.data_to_loop = data_js_buy['asks']
                 self.price_key = 0
                 self.size_key = 1
@@ -28,7 +28,7 @@ class Component():
                 self.size_key_sell = 'Quantity'
                 self.total_key_sell = None
 
-            elif  self.component_sell == 'binance_sell':
+            elif  self.component_sell == 'binance_sell' or self.component_sell == 'poloniex_sell':
                 self.data_to_sell = data_js_sell['bids']
                 self.price_key_sell = 0
                 self.size_key_sell = 1
