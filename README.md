@@ -8,7 +8,7 @@ Buy Sell works with open orders (asks, bid) and get result by percent different 
 
 Arguments:
 
---btc BTC    Btc size to buy currency, (default: 0.1)
+--btc BTC    Btc size to buy currency, (default: 0.1)<br/>
 --perc PERC  Percent difference, (default: Higher 0)
 
 
