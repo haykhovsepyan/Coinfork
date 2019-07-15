@@ -12,9 +12,9 @@ Arguments:
 --perc PERC  Percent difference, (default: Higher 0)
 
 
-**Example:
+**Example:**
 
-**python fork.py --btc 0.5 --perc 2 
+**python fork.py --btc 0.5 --perc 2 **
 
 ('6.73%', 'emcbtc-(Buy in HitBtc sell in  Bittrex)')
 
