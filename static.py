@@ -82,3 +82,46 @@ class Static():
             self.path1 = 'coinlist/binanceorder'
             self.path2 = 'coinlist/poloorder'
             self.desc = '(Buy in Binance sell in  Poloniex)'
+
+        if comp_path == 'binance-exmo':
+            self.path1 = 'coinlist/binanceorder'
+            self.path2 = 'coinlist/exmoorder'
+            self.desc = '(Buy in Binance sell in  Exmo)'
+
+        if comp_path == 'exmo-binance':
+            self.path1 = 'coinlist/exmoorder'
+            self.path2 = 'coinlist/binanceorder'
+            self.desc = '(Buy in Exmo sell in  Binance)'
+
+        if comp_path == 'poloniex-exmo':
+            self.path1 = 'coinlist/poloorder'
+            self.path2 = 'coinlist/exmoorder'
+            self.desc = '(Buy in Poloniex sell in Exmo)'
+
+
+        if comp_path == 'exmo-poloniex':
+            self.path1 = 'coinlist/exmoorder'
+            self.path2 = 'coinlist/poloorder'
+            self.desc = '(Buy in Exmo sell in  Poloniex)'
+
+        if comp_path == 'exmo-bittrex':
+            self.path1 = 'coinlist/exmoorder'
+            self.path2 = 'coinlist/bitorder'
+            self.desc = '(Buy in Exmo sell in  Bittrex)'
+
+        if comp_path == 'bittrex-exmo':
+            self.path1 = 'coinlist/bitorder'
+            self.path2 = 'coinlist/exmoorder'
+            self.desc = '(Buy in Bittrex sell in  Exmo)'
+
+
+        if comp_path == 'exmo-hitbtc':
+            self.path1 = 'coinlist/exmoorder'
+            self.path2 = 'coinlist/hitorder'
+            self.desc = '(Buy in Exmo sell in  Hitbtc)'
+
+        if comp_path == 'hitbtc-exmo':
+            self.path1 = 'coinlist/hitorder'
+            self.path2 = 'coinlist/exmoorder'
+            self.desc = '(Buy in HitBtc sell in  Exmo)'
+

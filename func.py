@@ -27,7 +27,7 @@ def parse_js(settings, buysell, wallets):
                 response_text_market2 = response_market2.read()
                 data_js_buy = json.loads(response_text_market1)
                 data_js_sell = json.loads(response_text_market2)
-            except urllib2.HTTPError, err:
+            except urllib2.HTTPError,  err:
                 continue
             perc = get_percent(settings, data_js_buy, data_js_sell, match_item, buysell, wallets)
             if perc:
@@ -46,22 +46,22 @@ def coin_buy(data_js_buy, data_js_sell, settings,  buysell, match_item, wallets)
             size = float(item[buysell.size_key])
             count = len(buysell.data_to_loop)
             if buysell.total_key:
-                total = item[buysell.total_key]
+                total = float(item[buysell.total_key])
             else:
                 total = price * size
-
-            while btc_size > total and count > 0:
-                btc_size -= total
-                size_count += size
-                total_count += total
-                count -= 1
-            if btc_size < total:
+            
+            btc_size -= total
+            size_count += size
+            if btc_size <= 0:
                 global size_total
                 size_total = btc_size / price + size_count - wallets.fee
-            else:
-                size_total = size_count - wallets.fee
-    
-        return size_total
+                break
+        
+        try:
+            return size_total
+        except NameError:
+             return False
+
 
 
 
@@ -74,21 +74,22 @@ def coin_sell(data_js_sell, settings,  data_js_buy, match_item, buysell, wallets
             price_sell = float(item[buysell.price_key_sell])
             size_sell = float(item[buysell.size_key_sell])
             if buysell.total_key_sell:
-                total_sell = item[buysell.total_key_sell]
+                total_sell = float(item[buysell.total_key_sell])
             else:
                 total_sell = price_sell * size_sell
+            
 
-
-            while size_total > size_sell:
-                size_total -= size_sell
-                total_count_sell += total_sell
-                size_count_sell += size_sell
-            if size_total < size_sell:
+            size_total -= size_sell
+            total_count_sell += total_sell
+            if size_total <=0:
                 global sell_result
                 sell_result = size_total * price_sell + total_count_sell
-            else:
-                sell_result = total_count_sell
-        return sell_result
+                break
+
+        try:
+            return sell_result
+        except NameError:
+            return False
 
 
 
