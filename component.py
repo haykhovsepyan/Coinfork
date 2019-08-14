@@ -17,7 +17,7 @@ class Component():
                 self.total_key = None
 
             elif self.component_buy =='exmo':
-                for item, url in data_js_buy.iteritems():
+                for item, url in data_js_buy.items():
                     self.data_to_loop = url['ask']
                     self.price_key = 0
                     self.size_key = 1
@@ -44,7 +44,7 @@ class Component():
                 self.total_key_sell = None
             
             elif self.component_sell == 'exmo_sell':
-                for item, url in data_js_sell.iteritems():
+                for item, url in data_js_sell.items():
                     self.data_to_sell = url['bid']
                     self.price_key_sell = 0
                     self.size_key_sell = 1

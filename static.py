@@ -1,6 +1,3 @@
-import urllib2
-import json
-from collections import OrderedDict
 import argparse
 
 class Static():

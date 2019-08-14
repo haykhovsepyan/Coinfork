@@ -1,4 +1,5 @@
-import urllib2
+import urllib.request
+from urllib.request import urlopen
 import json
 import ast
 from collections import OrderedDict
@@ -17,21 +18,21 @@ def parse_js(settings, buysell, wallets):
     path2 = settings.path2
     market1 = coin_list(path1)
     market2 = coin_list(path2)
-    for match_item, market_url in market2.iteritems():
+    for match_item, market_url in market2.items():
         if match_item in market1:
             try:
-                response_market1 = urllib2.urlopen(market1[match_item])
-                response_market2 = urllib2.urlopen(market_url)
+                response_market1 = urlopen(market1[match_item])
+                response_market2 = urlopen(market_url)
 
                 response_text_market1 = response_market1.read()
                 response_text_market2 = response_market2.read()
                 data_js_buy = json.loads(response_text_market1)
                 data_js_sell = json.loads(response_text_market2)
-            except urllib2.HTTPError,  err:
+            except urllib.error.HTTPError as  err:
                 continue
             perc = get_percent(settings, data_js_buy, data_js_sell, match_item, buysell, wallets)
             if perc:
-                print perc
+                print (perc)
             
 
 def coin_buy(data_js_buy, data_js_sell, settings,  buysell, match_item, wallets):

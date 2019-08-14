@@ -1,7 +1,7 @@
 # Coinfork
 **Coin fork  between exchanges**
 
-Coin Fork is  scrypt written in python 2.7, which find fork between exchanges Poloniex, Hitbtc, Binance, Exmo and Bittrex.
+Coin Fork is  scrypt written in python 3, which find fork between exchanges Poloniex, Hitbtc, Binance, Exmo and Bittrex.
 Scrypt is working only with BTC compare , by  BTC size (Size BTC passes via argument) buys currency in one exchange  and sell in other exchange.
 
 Buy Sell works with open orders (asks, bid), checks if withdraw and deposit is  True, count TaxFee and get real result by percent different that you also can pass via argument.
