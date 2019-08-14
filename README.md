@@ -14,7 +14,7 @@ Arguments:
 
 **Example:**
 
-**python fork.py --btc 0.5 --perc 2**
+**python3 fork.py --btc 0.5 --perc 2**
 
 ('6.73%', 'emcbtc-(Buy in HitBtc sell in  Bittrex)')
 
